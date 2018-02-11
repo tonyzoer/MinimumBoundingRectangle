@@ -3,14 +3,6 @@
 A Java implementation of the Rotating Calipers algorithm to find the minimum
 bounding rectangle of a set of points.
 
-A demo is deployed here: [bkiers-demos.appspot.com/rotating-calipers](http://bkiers-demos.appspot.com/rotating-calipers)
-
-## How to use it
-
-The implementation is pretty straight forward: everything resides in a single class
-([RotatingCalipers](https://github.com/bkiers/RotatingCalipers/blob/master/src/main/cg/RotatingCalipers.java)).
-Simply copy the class in your project, and invoke one of the following methods:
-
 #### get all bounding rectangles
 
 ```java
@@ -59,6 +51,3 @@ corner[3] (-400.0, -0.0)
 corner[4] (-320.0, -240.0)
 
 area: 160000.0
-```
-
- [1]: https://raw.github.com/bkiers/RotatingCalipers/master/img/rectangle.png
