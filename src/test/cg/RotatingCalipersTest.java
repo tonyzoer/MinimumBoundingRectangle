@@ -6,6 +6,7 @@ import java.awt.Point;
 import java.awt.geom.Point2D;
 import java.util.Arrays;
 import java.util.List;
+import java.awt.Graphics;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -28,4 +29,6 @@ public class RotatingCalipersTest {
 
         System.out.printf("%narea: %.1f", RotatingCalipers.getArea(minimum));
     }
+
+
 }
