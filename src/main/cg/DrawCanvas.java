@@ -76,9 +76,11 @@ class CGTemplate extends JFrame {
             this.add(clear);
 
             addMouseListener(new MouseAdapter() {
+
+
                 @Override
-                public void mouseClicked(MouseEvent e) {
-                    super.mouseClicked(e);
+                public void mousePressed(MouseEvent e) {
+                    super.mousePressed(e);
                     drawPoint(e.getX(), e.getY());
                     repaint();
                 }
@@ -110,14 +112,14 @@ class CGTemplate extends JFrame {
             try {
                 if (xs.size() > 2) {
 
-                    Point2D.Double[] minimumNO = RotatingCalipers.getGetNotOrientedBoundingRectangle(xs.stream().mapToInt(i -> i).toArray(), ys.stream().mapToInt(i -> i).toArray());
-                    g.drawLine((int) minimumNO[0].x, (int) minimumNO[0].y, (int) minimumNO[1].x, (int) minimumNO[1].y);
-                    g.drawLine((int) minimumNO[1].x, (int) minimumNO[1].y, (int) minimumNO[2].x, (int) minimumNO[2].y);
-                    g.drawLine((int) minimumNO[2].x, (int) minimumNO[2].y, (int) minimumNO[3].x, (int) minimumNO[3].y);
-                    g.drawLine((int) minimumNO[3].x, (int) minimumNO[3].y, (int) minimumNO[0].x, (int) minimumNO[0].y);
-                    for (Point2D.Double corner : minimumNO) {
-                        System.out.printf("corner[%d] (%.1f, %.1f)%n", number++, corner.x, corner.y);
-                    }
+//                    Point2D.Double[] minimumNO = RotatingCalipers.getGetNotOrientedBoundingRectangle(xs.stream().mapToInt(i -> i).toArray(), ys.stream().mapToInt(i -> i).toArray());
+//                    g.drawLine((int) minimumNO[0].x, (int) minimumNO[0].y, (int) minimumNO[1].x, (int) minimumNO[1].y);
+//                    g.drawLine((int) minimumNO[1].x, (int) minimumNO[1].y, (int) minimumNO[2].x, (int) minimumNO[2].y);
+//                    g.drawLine((int) minimumNO[2].x, (int) minimumNO[2].y, (int) minimumNO[3].x, (int) minimumNO[3].y);
+//                    g.drawLine((int) minimumNO[3].x, (int) minimumNO[3].y, (int) minimumNO[0].x, (int) minimumNO[0].y);
+//                    for (Point2D.Double corner : minimumNO) {
+//                        System.out.printf("corner[%d] (%.1f, %.1f)%n", number++, corner.x, corner.y);
+//                    }
 
 
 
