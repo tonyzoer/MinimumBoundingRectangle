@@ -1,6 +1,6 @@
 <project name="RotatingCalipers">
 
-    <property name="author" value="Bart Kiers, bart@big-o.nl"/>
+    <property name="author" value="Anton Yashchuk, okamanahi@gmail.com"/>
 
     <property name="src.dir" value="src"/>
     <property name="build.dir" value="build"/>
