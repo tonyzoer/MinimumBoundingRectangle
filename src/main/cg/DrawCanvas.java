@@ -5,6 +5,7 @@ import java.awt.event.*; // Using AWT event classes and listener interfaces
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.*;    // Using Swing's components and containers
 
 /**
@@ -30,10 +31,12 @@ class CGTemplate extends JFrame {
         cp.add(canvas);
         // or "setContentPane(canvas);"
 
-        setDefaultCloseOperation(EXIT_ON_CLOSE);   // Handle the CLOSE button
-        pack();              // Either pack() the components; or setSize()
-        setTitle("......");  // "super" JFrame sets the title
-        setVisible(true);    // "super" JFrame show
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        pack();
+        setTitle("Minimum bounding rectangle");
+        setVisible(true);
+
+
     }
 
     /**
@@ -46,6 +49,32 @@ class CGTemplate extends JFrame {
 
         public DrawCanvas() {
             super();
+            JPanel thisPanel=this;
+            JButton random=new JButton("random");
+            random.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    int min=10;
+                    for (int i = 0; i <10 ; i++) {
+                        int randomNumX = ThreadLocalRandom.current().nextInt(min, thisPanel.getWidth() + 1);
+                        int randomNumY = ThreadLocalRandom.current().nextInt(min, thisPanel.getHeight() + 1);
+                        drawPoint(randomNumX, randomNumY);
+                    }
+                    repaint();
+                }
+            });
+            JButton clear=new JButton("clear");
+            clear.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    xs.clear();
+                    ys.clear();
+                    repaint();
+                }
+            });
+            this.add(random);
+            this.add(clear);
+
             addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
